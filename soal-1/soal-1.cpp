@@ -28,12 +28,19 @@ void regulaFalsi(double a, double b, int max_iterasi, double toleransi){
         cout << i << "\t" << a << "\t\t" << b << "\t\t" << x << "\t\t" << f(x) << "\t" << er << endl;
 
         if (fabs(f(x)) < toleransi){
-            /* code */
+            cout << "\nAkar ditemukan: " << x <<endl;
+            break;
         }
-        
+
+        if (f(a) * f(x) < 0)
+            b = x;
+        else
+            a = x;
+
+        x_prev = x;
         
     }
-    
+    cout << "\nAproksimasi akar: " << x << endl;
     
 }
 
@@ -48,7 +55,7 @@ void generateData(double start, double end) {
     file.close();
 }
 
-// Generate script gnuplot
+// Generate gnuplot
 void generatePlot() {
     ofstream file("plot.gnu");
 
