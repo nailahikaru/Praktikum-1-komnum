@@ -9,7 +9,7 @@ double f(double x){
 }
 
 void regulaFalsi(double a, double b, int max_iterasi, double toleransi){
-    if (f(a) * f(b >=0)){
+    if (f(a) * f(b) >= 0){
         cout << "interval tidak valid\n";
         return;
     }
@@ -76,10 +76,10 @@ int main(){
     cout << "Masukkan a : "; cin >> a;
     cout << "Masukkan b : "; cin >> b;
     cout << "Masukkan max iterasi : "; cin >> max_iterasi;
-    cout << "Masukkan toleransi : "; cin >> toleransi;
+    cout << "Masukkan toleransi : "; cin >> toleransi; cout << endl;
 
     regulaFalsi(a, b, max_iterasi, toleransi);
-    generateData(-2, 2);
+    generateData(a-1.0, b+1.0);
     generatePlot();
 
     cout<<"\nfile grafik sudah dibuat!";
